@@ -1,0 +1,53 @@
+---
+title: "Data Frame Exploration"
+output: 
+    html_document:
+        theme: cerulean
+        toc: true
+        keep_md: true
+---
+
+## Exploring `gapminder`
+
+### Setting up
+
+We load `gapminder` using the `library` function
+
+```{r}
+library(gapminder)
+```
+
+### Exploring gapminder
+
+The `head` command gives us the first part of the gapminder dataset, so we can see what it looks like.
+```{r}
+head(gapminder)
+```
+We can get a good summary of `gapminder` using the summary function:
+```{r}
+summary(gapminder)
+```
+
+### Let's focus on the population sizes
+```{r}
+
+```
+Let's look at some descriptive statistics for this column.
+```{r}
+median(gapminder$pop)
+mean(gapminder$pop)
+sd(gapminder$pop)
+var(gapminder$pop)
+```
+We can see that these statistics agree with the statistics we got from the summary command above.
+
+### An `if` statement
+
+Let's see if the mean life expectancy is greater than that of Canada's, 82.
+```{r}
+if (mean(gapminder$lifeExp) > 82){
+  print('It is!')
+}else{
+  print('It\'s not!')
+}
+```
