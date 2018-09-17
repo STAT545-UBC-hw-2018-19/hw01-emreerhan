@@ -1,5 +1,8 @@
 ---
 title: "Data Frame Exploration"
+author: "Emre Erhan"
+date: "September 17, 2018"
+output: "github_document"
 ---
 
 ## Exploring `gapminder`
@@ -23,11 +26,9 @@ We can get a good summary of `gapminder` using the summary function:
 summary(gapminder)
 ```
 
-### Let's focus on the population sizes
-```{r}
+### Let's look at population sizes
 
-```
-Let's look at some descriptive statistics for this column.
+Let's look at some descriptive statistics for the `pop` column.
 ```{r}
 median(gapminder$pop)
 mean(gapminder$pop)
@@ -46,3 +47,29 @@ if (mean(gapminder$lifeExp) > 82){
   print('It\'s not!')
 }
 ```
+
+
+### Let's see how Canadian life expectancy has changed over the years
+
+```{r}
+canada_index = gapminder$country=="Canada"
+x = gapminder$year[canada_index]
+y = gapminder$lifeExp[canada_index]
+scatter.smooth(x, y, xlab="Years", ylab="Life expectancy")
+```
+
+### Is there a relationship between the `gdpPercap` and `pop` of Turkey over the years the data was taken?
+
+```{r}
+turkey_index = gapminder$country=="Turkey"
+x = gapminder$pop[turkey_index]
+y = gapminder$gdpPercap[turkey_index]
+scatter.smooth(x, y, xlab="Population of Turkey", ylab="GDP/capita of Turkey")
+```
+
+There does appear to be a relationship! We can confirm this by getting the correlation.
+```{r}
+cor(x, y)
+```
+
+However, remember that a correlation does not suggest that either of these variables impact each other directly. We cannot say anything causal.
