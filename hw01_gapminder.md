@@ -23,14 +23,14 @@ head(gapminder)
 ```
 
     ## # A tibble: 6 x 6
-    ##       country continent  year lifeExp      pop gdpPercap
-    ##        <fctr>    <fctr> <int>   <dbl>    <int>     <dbl>
-    ## 1 Afghanistan      Asia  1952  28.801  8425333  779.4453
-    ## 2 Afghanistan      Asia  1957  30.332  9240934  820.8530
-    ## 3 Afghanistan      Asia  1962  31.997 10267083  853.1007
-    ## 4 Afghanistan      Asia  1967  34.020 11537966  836.1971
-    ## 5 Afghanistan      Asia  1972  36.088 13079460  739.9811
-    ## 6 Afghanistan      Asia  1977  38.438 14880372  786.1134
+    ##   country     continent  year lifeExp      pop gdpPercap
+    ##   <fct>       <fct>     <int>   <dbl>    <int>     <dbl>
+    ## 1 Afghanistan Asia       1952    28.8  8425333      779.
+    ## 2 Afghanistan Asia       1957    30.3  9240934      821.
+    ## 3 Afghanistan Asia       1962    32.0 10267083      853.
+    ## 4 Afghanistan Asia       1967    34.0 11537966      836.
+    ## 5 Afghanistan Asia       1972    36.1 13079460      740.
+    ## 6 Afghanistan Asia       1977    38.4 14880372      786.
 
 We can get a good summary of `gapminder` using the summary function:
 
